@@ -12,8 +12,7 @@
 
 body {
     background: #1e1e1e;
-    overflow-x: hidden;
-
+    
     background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
     background-position: 50% 50%;
     background-size: 1.1rem 1.1rem;
@@ -256,6 +255,7 @@ body {
     background-color: #131313;
     box-shadow: #131313 0px 10px 8px 0px;
     padding: 30px;
+    overflow-x: hidden;
 
     text-align: center;
     color: white;
@@ -508,3 +508,4 @@ input[type=checkbox] {
     }
 
 }
+
