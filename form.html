@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="header">
+        <a href="index.html">Pizza <span class="hub"> Hub</span></a>
+        
+        <div class="link-div">
+            <a href="https://github.com/NooBTvv2"><img src="images/assets/github.png"></a>
+            <a href="https://www.facebook.com/LinkedRBXLDevelopment/"><img src="images/assets/facebook.png"></a>
+            <a href="https://www.tiktok.com/@its_radishes"><img src="images/assets/tiktok.png"></a>
+        </div>
+    </div>
+
+    <div class="track-main">
+
+        <div class="moving-track img-track-root">
+            <img class="img-mv" src="images/pizzatypes/chicago.jpg" draggable="false">
+            <img class="img-mv" src="images/pizzatypes/detroit.jpg" draggable="false">
+            <img class="img-mv" src="images/pizzatypes/newyork.jpg" draggable="false">
+            <img class="img-mv" src="images/pizzatypes/pinoy-pizza-1.jpg" draggable="false">
+            <img class="img-mv" src="images/pizzatypes/Pizza-Napoletana.webp" draggable="false">
+            <img class="img-mv" src="images/pizzatypes/sillican.jpg" draggable="false">
+            <img class="img-mv" src="images/pizzatypes/Greek-Pizza.jpg" draggable="false">
+            <img class="img-mv" src="images/pizzatypes/roman.jpg" draggable="false">
+            <img class="img-mv" src="images/pizzatypes/margherita.jpg" draggable="false">
+        </div>
+    </div>
+
+    <br>
+    
+    <h1 class="hd-standalone">Order <span class="hub">Form</span></h1>
+
+    <form id="formcontainer">
+
+        <div style="display: grid;" class="formsel">
+            <label>Customer Name</label>
+            <input type="text" id="name" required>
+
+            <br>
+
+            <label>Pizza Size</label>
+            <select id="select">
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+                <option value="XL">XL</option>
+                <option value="Oh my gosh">Oh my gosh</option>
+            </select>
+        </div>
+
+        <div class="formsel">
+            <label style="font-size: 30px;">Toppings</label>
+
+            <hr class="sep">
+
+            <div id="toppings">
+                <div class="ch">
+                    <input type="checkbox" name="" id="cb1">
+                    <label for="cb1">
+                        <img src="images/toppings/pepporoni.png" alt="pep-img" draggable="false">
+                    </label>
+                </div>
+
+                <div class="ch">
+                    <input type="checkbox" name="" id="cb2">
+                    <label for="cb2">
+                        <img src="images/toppings/pineapple.webp" alt="pine-img" draggable="false">
+                    </label>
+                </div>
+
+                <div class="ch">
+                    <input type="checkbox" name="" id="cb3">
+                    <label for="cb3">
+                        <img src="images/toppings/beef.jpg" alt="beef-img" draggable="false">
+                    </label>
+                </div>
+
+                <div class="ch">
+                    <input type="checkbox" name="" id="cb4">
+                    <label for="cb4">
+                        <img src="images/toppings/beef.jpg" alt="beef-img" draggable="false">
+                    </label>
+                </div>
+
+                <div class="ch">
+                    <input type="checkbox" name="" id="cb5">
+                    <label for="cb5">
+                        <img src="images/toppings/beef.jpg" alt="beef-img" draggable="false">
+                    </label>
+                </div>
+
+                <div class="ch">
+                    <input type="checkbox" name="" id="cb6">
+                    <label for="cb6">
+                        <img src="images/toppings/beef.jpg" alt="beef-img" draggable="false">
+                    </label>
+                </div>
+
+                <div class="ch">
+                    <input type="checkbox" name="" id="cb7">
+                    <label for="cb7">
+                        <img src="images/toppings/beef.jpg" alt="beef-img" draggable="false">
+                    </label>
+                </div>
+
+                <div class="ch">
+                    <input type="checkbox" name="" id="cb8">
+                    <label for="cb8">
+                        <img src="images/toppings/beef.jpg" alt="beef-img" draggable="false">
+                    </label>
+                </div>
+
+                <div class="ch">
+                    <input type="checkbox" name="" id="cb9">
+                    <label for="cb9">
+                        <img src="images/toppings/beef.jpg" alt="beef-img" draggable="false">
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="result"></div>
+
+        <div class="ordform">
+            <button>Submit Order</button>
+            <p style="display: flex;">© 2025 Pizza Hub. All rights reserved. <span style="margin-left: auto;">Made by Calipusan</span></p>
+        </div>
+    </form>
+
+</body>
+
+</html>
