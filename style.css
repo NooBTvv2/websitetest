@@ -12,7 +12,7 @@
 
 body {
     background: #1e1e1e;
-    
+
     background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
     background-position: 50% 50%;
     background-size: 1.1rem 1.1rem;
@@ -255,8 +255,9 @@ body {
     background-color: #131313;
     box-shadow: #131313 0px 10px 8px 0px;
     padding: 30px;
-    overflow-x: hidden;
 
+
+    overflow-x: hidden;
     text-align: center;
     color: white;
 }
@@ -471,14 +472,82 @@ input[type=checkbox] {
     box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4);
 }
 
-@media (max-width: 600px) {
-    .ch > label > img {
-        width: 100%;
+@media (max-width: 768px) {
+    .formsel {
+        margin-left: -10px;
+        margin-right: -10px;
+
+        border-radius: 0px;
+        background: #1e1e1e;
+        border-color: #333333;
+        
+        text-align: center
+    };
+
+    .img-track-root {
+        padding: 0px;
+        margin: 0px;
     }
 
-    .ch > label {
-        padding: 5px;
+    .track-main {
+        align-items: center;
+        box-shadow: none;
+
+        padding: 0px;
         margin: 0px;
+    }
+
+    body {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .about-div {
+        margin: 0px;
+        padding: 10px;
+    }
+
+    .textcontainer {
+        margin-left: -10%;
+        margin-right: -10%;
+        margin-top: -20%;
+
+        top: 0px;
+
+        height: 30vmin;
+        border-radius: 0px;
+
+
+        text-align: center;
+
+        align-items: center;
+
+        border: none;
+    }
+
+    .textcontainer p {
+        font-size: 3.5vmin;
+        font-weight: bold;
+    }
+
+    .header {
+        color: rgb(245, 245, 220);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+        align-items: center;
+        text-align: left;
+        display: flex;
+    
+        justify-content: center;
+        font-size: large;
+    
+        padding-left: 30px;
+        backdrop-filter: blur(10px);
+    
+        top: 0px;
+        position: sticky;
+    
+        z-index: 10;
     }
 }
 
@@ -506,6 +575,4 @@ input[type=checkbox] {
 
         transform: translateY(0);
     }
-
 }
-
