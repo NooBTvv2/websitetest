@@ -79,6 +79,10 @@ body {
     font-size: large;
 }
 
+.about-div > .link-div {
+    display: none;
+}
+
 .link-div {
     display: flex;
     justify-content: space-evenly;
@@ -87,7 +91,6 @@ body {
 
     margin-left: auto;
     padding: 10px;
-    padding-right: 30px;
 }
 
 .link-div > a > img {
@@ -149,7 +152,7 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     line-height: 2em;
     padding: 20px;
-    margin: 30px;
+    margin: 20px;
 
     box-shadow: #131313 0px 10px 8px 0px;
 
@@ -173,7 +176,7 @@ body {
     padding: 20px;
     padding-bottom: 5px;
 
-    margin: 30px;
+    margin: 20px;
 
     box-shadow: #131313 0px 10px 8px 0px;
     background-size: cover;
@@ -415,66 +418,8 @@ body {
     transform: scale(1.075);
 }
 
-#toppings {
-    display: flex;
-    flex-wrap: wrap;
-
-    gap: 2vmin;
-
-    list-style-type: none;
-    background-color: #333333;
-}
-
-input[type=checkbox] {
-   display: none;
-}
-
-.ch {
-    justify-content: center;
-    align-items: center;
-
-    margin: 0px;
-    padding: 0px;
-
-    padding-right: 1vmin;
-    width: 100%;
-}
-
-.to-cont {
-    position: relative;
-
-    width: 100%;
-    height: 100%;
-}
-
-.to-cont label {
-    position: absolute;
-    
-    width: 100%;
-    height: 100%;
-
-    transition: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
-
-}
-
-.to-cont img {
-    width: 100%;
-    height: 25vmin;
-
-    border: 1vmin #141414 solid;
-    border-radius: 20px;
-    object-fit: cover;
-
-    transition: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
-    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4);
-
-    transform-origin: 50% 50%;
-}
-
-:checked + .to-cont img {
-    transform: scale(0.9);
-    border: 1vmin rgb(232, 143, 0) solid;
-    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4);
+.contact {
+    display: none;
 }
 
 @media (max-width: 768px) {
@@ -514,6 +459,14 @@ input[type=checkbox] {
         padding: 10px;
     }
 
+    .about-div > .link-div {
+        display: flex;
+    }
+
+    .contact {
+        display:block;
+    }
+
     .textcontainer {
         margin-left: -10%;
         margin-right: -10%;
@@ -550,7 +503,7 @@ input[type=checkbox] {
     }
 
     .header {
-        height: 8vmin;
+        height: 12vmin;
     }
 
     .header > a {
@@ -559,6 +512,12 @@ input[type=checkbox] {
 
     .header > div {
         display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .newrel {
+        width: 100%;
     }
 }
 
