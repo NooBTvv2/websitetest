@@ -7,6 +7,8 @@
     <title>Pizza Hub</title>
     
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="uistyles.css">
+
     <script src="script.js" defer></script>
 </head>
 
@@ -32,26 +34,35 @@
     </div>
 
     <h1 class="hd-standalone animated-scroll">Our <span class="hub">Hot</span> Selections</h1> 
-    <hr class="animated-scroll">
 
-    <div class="pizcontainer animated-scroll">
-       
+    <div class="pizcontainer animated-scroll-side">
+    
         <div class="newrel"
             style="background-image: linear-gradient(18deg, rgb(203, 119, 29) 0%, rgba(0, 0, 0, .2) 100%), url('images/pizzatypes/chicago.jpg')">
+    
             <h2>New <span class="hub">Release!</span></h2>
             <h1>Chicago Style Pizza</h1>
-        
-            <p>Experience the bold flavors of our Chicago Style Pizza, featuring a thick, buttery crust loaded with rich tomato
-                sauce, gooey mozzarella cheese, and your choice of premium toppings. Perfect for those who crave a hearty and
+    
+            <p>Experience the bold flavors of our Chicago Style Pizza, featuring a thick, buttery crust loaded with rich
+                tomato
+                sauce, gooey mozzarella cheese, and your choice of premium toppings. Perfect for those who crave a
+                hearty and
                 satisfying meal!</p>
         </div>
-
-        <div class="newrel" style="background-image: linear-gradient(18deg, rgb(203, 119, 29) 0%, rgba(0, 0, 0, .2) 100%), url(images/pizzatypes/pinoy-pizza-1.jpg)">
+    
+        <div class="newrel"
+            style="background-image: linear-gradient(18deg, rgb(203, 119, 29) 0%, rgba(0, 0, 0, .2) 100%), url(images/pizzatypes/pinoy-pizza-1.jpg)">
+    
             <h2>Customer <span class="hub">Favorite!</span></h2>
             <h1>Pinoy Style Pizza</h1>
-
-            <p>Indulge in our Pinoy Style Pizza, a delightful fusion of Filipino flavors with classic pizza tradition. Topped with local favorites like ube, Filipino sausage, and local cheese, this unique pizza brings a taste of the Philippines to your plate. A perfect blend of familiar comfort and exciting new flavors!</p>
+    
+            <p>Indulge in our Pinoy Style Pizza, a delightful fusion of Filipino flavors with classic pizza tradition.
+                Topped
+                with local favorites like ube, Filipino sausage, and local cheese, this unique pizza brings a taste of
+                the
+                Philippines to your plate. A perfect blend of familiar comfort and exciting new flavors!</p>
         </div>
+    
     </div>
 
      <div class="track-main animated-scroll">
@@ -73,12 +84,12 @@
         </div>
     </div>
 
-    <div class="formsel" style="backdrop-filter: blur(3px)">
+    <div class="formsel">
         <h1 class="animated-scroll">Our Locations</h1>
 
         <div class="loc-div">
             <p class="loc-rel animated-scroll">Ozamiz City - Carmen Annex <span class="loc">Store Hours 4 AM - 9PM</span></p>
-            <p class="loc-rel animated-scroll">Ozamiz City - Carmen Annex - P1 - Katong red nga gate <span class="loc">Store Hours 4 AM - 9PM</span></p>
+            <p class="loc-rel animated-scroll">Ozamiz City - Katong red nga gate <span class="loc">Store Hours 4 AM - 9PM</span></p>
             <p class="loc-rel animated-scroll">Tangub City - Katong usa ka Barangay <span class="loc">Store Hours 8 AM - 11:59PM</span></p>
             <p class="loc-rel animated-scroll">Japan - Tokyo - Konichiwa guminasay <span class="loc">Store Hours 4 AM - 9PM</span></p>
             <p class="loc-rel animated-scroll">Cagayan de Oro - Divisoria <span class="loc">Store Hours 6 AM - 10PM</span></p>
@@ -280,7 +291,7 @@
     <br>
 
     <div class="ordform">
-        <a href="form.html"><button><span>Feeling Hungry?</span> Order Now</button></a>
+        <a href="form.html"><button class="btn">Feeling Hungry? <span class="hub">Order Now!</span></button></a>
          <p style="display: flex;">© 2025 Pizza Hub. All rights reserved. <span style="margin-left: auto;">Made by Calipusan</span></p>
     </div>
 

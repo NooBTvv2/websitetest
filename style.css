@@ -141,6 +141,9 @@ body {
 
     padding-top: 5px;
     padding-bottom: 5px;
+
+    font-weight: 900px;
+    font-style: normal;
 }
 
 .formsel {
@@ -160,6 +163,7 @@ body {
 }
 
 .pizcontainer {
+    overflow: hidden;
     display: flex;
     flex-wrap: wrap;
     scale: 1;
@@ -237,6 +241,12 @@ body {
     padding: 10px;
     position: sticky;
     bottom: 0px;
+
+    box-shadow:
+    0px 0px 20px rgba(255, 197, 71, 0.5),
+    0px 5px 5px -1px rgba(233, 172, 58, 0.25),
+    inset 4px 4px 8px rgba(255, 234, 175, 0.5),
+    inset -4px -4px 8px rgba(216, 147, 19, 0.35);
 }
 
 .ordform p {
@@ -245,10 +255,6 @@ body {
 }
 
 .ordform button {
-    background-color: black;
-    color: rgb(232, 143, 0);
-    border: 4px solid rgb(255, 197, 105);
-    border-radius: 10px;
     padding: 20px;
     font-weight: bolder;
     cursor: pointer;
@@ -260,10 +266,6 @@ body {
 
 .ordform button:hover {
     transform: scale(.95);
-}
-
-.ordform button span {
-    font-style: italic;
 }
 
 .track-main {
@@ -362,16 +364,21 @@ body {
 
     background-position: center center;
     transition: background-color 0.2s;
+
+    text-align: left;
 }
 
 .loc-rel:hover{
     background-color: #333333 ;
+
+    filter: brightness(120%);
     box-sizing: border-box;
-    border: 2px #686868 dashed;
 }
 
 .loc {
     color: rgb(232, 143, 0);
+    text-align: right;
+
     margin-left: auto;
 }
 
@@ -390,7 +397,16 @@ body {
     animation: fade-in forwards;
     animation-duration: 0.5s;
     animation-timeline: view();
-    animation-range: entry 40% cover 20%;
+    animation-range: entry 40% cover 60%;
+}
+
+.animated-scroll-side {
+    opacity: 0;
+    
+    animation: scroll-side forwards;
+    animation-duration: 0.5s;
+    animation-timeline: view();
+    animation-range: entry 10% cover 50%;
 }
 
 .img-track-root {
@@ -420,6 +436,16 @@ body {
 
 .contact {
     display: none;
+}
+
+#toppings {
+    display: flex;
+    justify-content: center;
+
+    padding-left: 10px;
+    padding-right: 10px;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 @media (max-width: 768px) {
@@ -524,7 +550,7 @@ body {
 @keyframes fade-in {
     from {
         opacity: 0;
-       
+    
         transform: translateY(300px);
     }
 
@@ -532,5 +558,17 @@ body {
         opacity: 1;
        
         transform: translateY(0);
+    }
+}
+
+@keyframes scroll-side {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
