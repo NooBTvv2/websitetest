@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Order</title>
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="uistyles.css">
     
-    <script src="script.js" defer></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script defer src="formfn.js"></script>
 </head>
 
 <body>
@@ -27,26 +28,10 @@
 
     <div class="track-main">
 
-        <div class="moving-track img-track-root">
-            <img class="img-mv" src="images/pizzatypes/chicago.jpg" draggable="false">
-            <img class="img-mv" src="images/pizzatypes/detroit.jpg" draggable="false">
-            <img class="img-mv" src="images/pizzatypes/newyork.jpg" draggable="false">
-            <img class="img-mv" src="images/pizzatypes/pinoy-pizza-1.jpg" draggable="false">
-            <img class="img-mv" src="images/pizzatypes/Pizza-Napoletana.webp" draggable="false">
-            <img class="img-mv" src="images/pizzatypes/sillican.jpg" draggable="false">
-            <img class="img-mv" src="images/pizzatypes/Greek-Pizza.jpg" draggable="false">
-            <img class="img-mv" src="images/pizzatypes/roman.jpg" draggable="false">
-            <img class="img-mv" src="images/pizzatypes/margherita.jpg" draggable="false">
-            <img class="img-mv" src="images/pizzatypes/chicago.jpg" draggable="false">
-            <img class="img-mv" src="images/pizzatypes/detroit.jpg" draggable="false">
-            <img class="img-mv" src="images/pizzatypes/newyork.jpg" draggable="false">
-            <img class="img-mv" src="images/pizzatypes/pinoy-pizza-1.jpg" draggable="false">
-            <img class="img-mv" src="images/pizzatypes/Pizza-Napoletana.webp" draggable="false">
-        </div>
+         <!-- Pizza Image Track Container -->
+        <div id="img-track-root" class="moving-track"></div>
     </div>
 
-    <br>
-    
     <h1 class="hd-standalone">Order <span class="hub">Form</span></h1>
 
     <form id="formcontainer">
@@ -58,115 +43,29 @@
             <br>
 
             <label>Pizza Size</label>
-            <select id="select">
-                <option value="Small">Small</option>
-                <option value="Medium">Medium</option>
-                <option value="Large">Large</option>
-                <option value="XL">XL</option>
-                <option value="Oh my gosh">Oh my gosh</option>
-            </select>
+
+             <!-- Pizza Size Selection -->
+            <select id="select"></select>
         </div>
 
-        <div class="formsel"">
+        <div class="formsel">
             <h1>Select Pizza</h1>
 
-            <div id="toppings">
-                <label class="card" style="background: linear-gradient(135deg, rgb(18, 18, 18) 0%, rgba(0, 0, 0, .2) 100%), url(images/pizzatypes/chicago.jpg); background-size: cover; background-position: center center;">
-                
-                    <input type="radio" id="pz1" name="pz-sel">
-                    <label class="card-content" style="z-index: 10;" for="pz1">
-                        <p class="card-title">Chicago Pizza</p>
-                        <p class="card-description">Prepared according to one of several styles developed in Chicago</p>
-                    </label>
-                </label>
+            <!-- Pizza Types Container -->
+            <div id="piz-type"></div>
 
-                <label class="card" style="background: linear-gradient(135deg, rgb(18, 18, 18) 0%, rgba(0, 0, 0, .2) 100%), url(images/pizzatypes/detroit.jpg); background-size: cover; background-position: center center;">
-                
-                    <input type="radio" id="pz2" name="pz-sel">
-                    <label class="card-content" style="z-index: 10;" for="pz2">
-                        <p class="card-title">Detroit Pizza</p>
-                        <p class="card-description">Known for its chewy, airy interior, crispy bottom, and signature caramelized cheese edges</p>
-                    </label>
-                </label>
-                
-                <label class="card" style="background: linear-gradient(135deg, rgb(18, 18, 18) 0%, rgba(0, 0, 0, .2) 100%), url(images/pizzatypes/Greek-Pizza.jpg); background-size: cover; background-position: center center;">
-                
-                    <input type="radio" id="pz3" name="pz-sel">
-                    <label class="card-content" style="z-index: 10;" for="pz3">
-                        <p class="card-title">Greek Pizza</p>
-                        <p class="card-description">A New England-style American pan pizza with a thick, chewy, and oily crust</p>
-                    </label>
-                </label>
-
-                <label class="card" style="background: linear-gradient(135deg, rgb(18, 18, 18) 0%, rgba(0, 0, 0, .2) 100%), url(images/pizzatypes/margherita.jpg); background-size: cover; background-position: center center;">
-                
-                    <input type="radio" id="pz4" name="pz-sel">
-                    <label class="card-content" style="z-index: 10;" for="pz4">
-                        <p class="card-title">Margherita Pizza</p>
-                        <p class="card-description">Seasoned with hand-crushed peeled tomatoes, mozzarella, fresh basil leaves, and extra virgin olive oil.</p>
-                    </label>
-                </label>
-
-                <label class="card" style="background: linear-gradient(135deg, rgb(18, 18, 18) 0%, rgba(0, 0, 0, .2) 100%), url(images/pizzatypes/newyork.jpg); background-size: cover; background-position: center center;">
-                
-                    <input type="radio" id="pz5" name="pz-sel">
-                    <label class="card-content" style="z-index: 10;" for="pz5">
-                        <p class="card-title">New York Pizza</p>
-                        <p class="card-description">Large, thin, foldable slices with a crisp yet pliable crust, topped with simple, quality ingredients</p>
-                    </label>
-                </label>
-
-                <label class="card" style="background: linear-gradient(135deg, rgb(18, 18, 18) 0%, rgba(0, 0, 0, .2) 100%), url(images/pizzatypes/pinoy-pizza-1.jpg); background-size: cover; background-position: center center;">
-                
-                    <input type="radio" id="pz6" name="pz-sel">
-                    <label class="card-content" style="z-index: 10;" for="pz6">
-                        <p class="card-title">Pinoy Pizza</p>
-                        <p class="card-description">Incorporates beloved local staples like longganisa, ham, pineapple, and banana ketchup</p>
-                    </label>
-                </label>
-
-                <label class="card" style="background: linear-gradient(135deg, rgb(18, 18, 18) 0%, rgba(0, 0, 0, .2) 100%), url(images/pizzatypes/Pizza-Napoletana.webp); background-size: cover; background-position: center center;">
-                
-                    <input type="radio" id="pz7" name="pz-sel">
-                    <label class="card-content" style="z-index: 10;" for="pz7">
-                        <p class="card-title">Napoletana Pizza</p>
-                        <p class="card-description">A traditional Italian pizza from Naples, characterized by a soft, thin, chewy base</p>
-                    </label>
-                </label>
-
-                <label class="card" style="background: linear-gradient(135deg, rgb(18, 18, 18) 0%, rgba(0, 0, 0, .2) 100%), url(images/pizzatypes/roman.jpg); background-size: cover; background-position: center center;">
-                
-                    <input type="radio" id="pz8" name="pz-sel">
-                    <label class="card-content" style="z-index: 10;" for="pz8">
-                        <p class="card-title">Roman Pizza</p>
-                        <p class="card-description">A traditional Italian pizza from Naples, characterized by a soft, thin, chewy base</p>
-                    </label>
-                </label>
-
-                <label class="card" style="background: linear-gradient(135deg, rgb(18, 18, 18) 0%, rgba(0, 0, 0, .2) 100%), url(images/pizzatypes/sillican.jpg); background-size: cover; background-position: center center;">
-                
-                    <input type="radio" id="pz9" name="pz-sel">
-                    <label class="card-content" style="z-index: 10;" for="pz9">
-                        <p class="card-title">Sicilican Pizza</p>
-                        <p class="card-description">A thick, rectangular, focaccia-like pizza with a fluffy, chewy, crispy crust</p>
-                    </label>
-                </label>
-
-            </div>
         </div>
 
-        <br>
         <br>
 
         <div class="formsel">
-            <label style="font-size: 4vmin; font-weight: bolder;">Toppings</label>
+            <label class="tp-title" style="font-weight: bolder;">Toppings</label>
 
-            <hr class="sep">
-                <label>
-                    <input type="checkbox">
-                    <span>Hitech</span>
-                </label>
-            <br>
+            <hr>
+
+            <!-- Toppings Container -->
+            <div id="top-container"></div>
+    
         </div>
 
         <div class="result"></div>

@@ -10,6 +10,10 @@
     padding: 10px;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 body {
     background: #1e1e1e;
     width: auto;
@@ -277,6 +281,8 @@ body {
     overflow-x: hidden;
     text-align: center;
     color: white;
+
+    margin-bottom: 6vmin;
 }
 
 .track-main > h1 {
@@ -339,7 +345,7 @@ body {
     font-size: 20px;
 }
 
-.loc-div {
+#loc-div {
     height: 100%;
     width: 100%;    
 }
@@ -375,7 +381,7 @@ body {
     box-sizing: border-box;
 }
 
-.loc {
+#loc-div span {
     color: rgb(232, 143, 0);
     text-align: right;
 
@@ -409,7 +415,7 @@ body {
     animation-range: entry 10% cover 50%;
 }
 
-.img-track-root {
+#img-track-root {
     display: flex;
     padding: 20px;
     gap: 30px;
@@ -438,14 +444,12 @@ body {
     display: none;
 }
 
-#toppings {
+#piz-type {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 
-    padding-left: 10px;
-    padding-right: 10px;
+    gap: 24px;
     flex-wrap: wrap;
-    gap: 30px;
 }
 
 @media (max-width: 768px) {
@@ -458,7 +462,7 @@ body {
         text-align: center
     };
 
-    .img-track-root {
+    #img-track-root {
         padding: 0px;
         margin: 0px;
     }
@@ -483,6 +487,9 @@ body {
     .about-div {
         margin: 0px;
         padding: 10px;
+
+        margin-bottom: 25px;
+        margin-top: 20px;
     }
 
     .about-div > .link-div {
