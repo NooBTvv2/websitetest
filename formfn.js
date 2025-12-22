@@ -237,17 +237,29 @@ getForm.addEventListener('submit', function(event) {
 
     const formData = new FormData(getForm)
 
-    var cs_name = formData.get('name');
-    var cs_phone = formData.get('phone')
-    var cs_quantity = formData.get('quantity')
+    var cs_name = formData.get('name') || 'No Name'
+    var cs_phone = formData.get('phone') || 'No Phone#'
+    var cs_quantity = formData.get('quantity') || '1'
 
-    var cs_size = formData.get('size')
-    var cs_crust = formData.get('crust')
-    var cs_pzType = document.querySelector('input[name="pz-sel"]:checked')?.value;
+    var cs_size = formData.get('size') || 'Small (10")'
+    var cs_crust = formData.get('crust') || 'Thin Crust'
+    var cs_pzType = document.querySelector('input[name="pz-sel"]:checked')?.value || 'Chicago Pizza'
     
-    var cs_inst = formData.get('instructions')
+    var cs_inst = formData.get('instructions') || 'No Instructions'
     const tpcheckboxes = document.querySelectorAll('input[name="tp-cb"]:checked')
     const tp_cb_node = Array.from(tpcheckboxes).map(tpcheckboxes => tpcheckboxes.value)
+
+    var toppingNode = ''
+
+    if (tp_cb_node.length >= 1) {
+        for (let i = 0; i < tp_cb_node.length; i++) {
+            var toAppend = '<p>'+ tp_cb_node[i] +'</p>'
+
+            toppingNode = toppingNode + toAppend
+        }
+    } else {
+        toppingNode = `<p>No Additional Toppings</p>`
+    }
 
     var resultNode = `
     <div class="resultElement">
@@ -256,17 +268,16 @@ getForm.addEventListener('submit', function(event) {
         
         <div class="ResInfo">
             <div>
-                <p><span class="hub">Name</span> Gil Andrew</p>
-                <p><span class="hub">Phone#</span> 912-900-6503</p>
-                <p>Pinoy Pizza <span class="hub">Large</span> <span class="hub">Thin Crust</span> <span class="hub">3pc</span></p>
+                <p><span class="hub">Name</span> `+ cs_name +`</p>
+                <p><span class="hub">Phone#</span> `+ cs_phone +`</p>
+                <p>`+cs_pzType+` <span class="hub">`+ cs_size +`</span> <span class="hub">`+ cs_crust +`</span> <span class="hub">`+ cs_quantity +`pc</span></p>
             </div>
-            
             
             <div>
                 <h2>Additional <span class="hub">Toppings</span></h2>
 
                 <div id="restpCont">
-        
+                    `+toppingNode+`
                 </div>
             </div>
 

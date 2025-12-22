@@ -172,6 +172,7 @@
     width: 70vmin;
     height: auto;
 
+    line-height: 2em;
     background-color: #131313;
     box-shadow: #131313 0px 10px 8px 0px;
 
@@ -285,9 +286,14 @@ input[type="checkbox"] {
     }
 
     .resultElement {
+        line-height: 2em;
         width: 100%;
         height: 70%;
         transform: translateY(5%);
+    }
+    
+    .resultElement p {
+        font-size: 4vmin;
     }
 }
 
