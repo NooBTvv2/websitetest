@@ -45,7 +45,7 @@ var pztype = [
     },
 
     {
-        name: "Pinoy Pizza Pizza",
+        name: "Pinoy Pizza",
         desc: `Incorporates beloved local staples like longganisa, ham, pineapple, and banana ketchup.`,
         img: "images/pizzatypes/pinoy-pizza-1.jpg"
     },
@@ -103,11 +103,19 @@ var reviews_list = [
 ];
 
 var pzSize_selection = [
-    "Small",
-    "Medium",
-    "Large",
-    "Extra Large",
-    "Oh my gosh",
+    'Small (10")',
+    'Medium (12")',
+    'Large (14")',
+    'Extra Large (16")',
+    'Oh my gosh (20")',
+];
+
+var pzCrust_selection = [
+    "Thin Crust",
+    "Regular",
+    "Thick Crust",
+    "Stuffed Crust",
+    "BB-Crust"
 ];
 
 // pizza size selection using table (Quite Useless future me)
@@ -122,14 +130,26 @@ for (let i = 0; i < pzSize_selection.length; i++) {
     $(getSizeSelector_cont).append(option);
 };
 
+// pizza crust selection using table (Another useless thing)
+
+var getCrustSelector_cont = document.getElementById("crustsel");
+
+for (let i = 0; i < pzCrust_selection.length; i++) {
+    var option = document.createElement('option');
+    option.value = pzCrust_selection[i];
+    option.innerHTML = pzCrust_selection[i]
+
+    $(getCrustSelector_cont).append(option)
+};
+
 // add toppings using table
 
 var tp_cont = document.getElementById("top-container");
 
 for (let i = 0; i < tp_list.length; i++) {
     $(tp_cont).append(`
-        <label class="top-card"><input type="checkbox" name="" id="tp` + i + 
-        `"><div class="top-label" for="tp` + i + `">
+        <label class="top-card"><input type="checkbox" name="tp-cb" id="tp` + i + 
+        `" value="`+tp_list[i]+`"><div class="top-label" for="tp` + i + `">
         <p>` + tp_list[i] + `</p></div></label>`);
 };
 
@@ -140,7 +160,9 @@ var pztype_cont = document.getElementById("piz-type");
 for (let i = 0; i < pztype.length; i++) {
     var pzNODE = `
         <label class="card" style="background: linear-gradient(135deg, rgb(18, 18, 18) 0%, rgba(0, 0, 0, .2) 100%), url(`+ pztype[i].img +`); background-size: cover; background-position: center center;">    
-            <input type="radio" id="pz`+i+`" name="pz-sel">
+            <p class="card-tit-display">`+pztype[i].name+`</p>
+
+            <input type="radio" id="pz`+i+`" name="pz-sel" value="`+pztype[i].name+`">
             <label class="card-content" style="z-index: 10;" for="pz`+i+`">
                 <p class="card-title">`+pztype[i].name+`</p>
                 <p class="card-description">`+pztype[i].desc+`</p>
@@ -202,3 +224,58 @@ for (let i = 0; i < img_track_amount; i++) {
 
     $(img_track_cont).append(div)
 }
+
+// Submit Order
+
+var getResseter = document.getElementById('reset-form')
+var getForm = document.getElementById('formcontainer')
+var getRem = document.getElementById('to-rem')
+var getResult = document.getElementById('order-result')
+
+getForm.addEventListener('submit', function(event) {
+    event.preventDefault()
+
+    const formData = new FormData(getForm)
+
+    var cs_name = formData.get('name');
+    var cs_phone = formData.get('phone')
+    var cs_quantity = formData.get('quantity')
+
+    var cs_size = formData.get('size')
+    var cs_crust = formData.get('crust')
+    var cs_pzType = document.querySelector('input[name="pz-sel"]:checked')?.value;
+    
+    var cs_inst = formData.get('instructions')
+    const tpcheckboxes = document.querySelectorAll('input[name="tp-cb"]:checked')
+    const tp_cb_node = Array.from(tpcheckboxes).map(tpcheckboxes => tpcheckboxes.value)
+
+    var resultNode = `
+    <div class="resultElement">
+        <h1>Order <span class="hub">Receipt</span></h1>
+        <h3>Thank You for Ordering!</h3>
+        
+        <div class="ResInfo">
+            <div>
+                <p><span class="hub">Name</span> Gil Andrew</p>
+                <p><span class="hub">Phone#</span> 912-900-6503</p>
+                <p>Pinoy Pizza <span class="hub">Large</span> <span class="hub">Thin Crust</span> <span class="hub">3pc</span></p>
+            </div>
+            
+            
+            <div>
+                <h2>Additional <span class="hub">Toppings</span></h2>
+
+                <div id="restpCont">
+        
+                </div>
+            </div>
+
+        </div>
+    </div>
+    `
+
+    getRem.className = "resultCont"
+    getRem.innerHTML = ''
+
+    $(getRem).append(resultNode)    
+});

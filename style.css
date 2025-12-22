@@ -16,12 +16,7 @@
 
 body {
     background: #1e1e1e;
-    width: auto;
     margin: 0px;
-
-    background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-    background-position: 50% 50%;
-    background-size: 1.1rem 1.1rem;
 }
 
 .header {
@@ -34,8 +29,11 @@ body {
     justify-content: center;
     font-size: large;
 
-    backdrop-filter: blur(10px);
-    
+    background-color: #161616da;
+    backdrop-filter: blur(15px);
+
+    box-shadow: 0px 0px 200px rgb(0, 0, 0);
+
     top: 0px;
     position: fixed;
 
@@ -44,7 +42,7 @@ body {
     height: 6vmin;
     width: 100%;
 
-    z-index: 10;
+    z-index: 15;
 }
 
 .header > a {
@@ -159,8 +157,9 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     line-height: 2em;
     padding: 20px;
-    margin: 20px;
+    margin: auto;
 
+    width: 100%;
     box-shadow: #131313 0px 10px 8px 0px;
 
     background-color: #1d1d1d;
@@ -219,23 +218,49 @@ body {
     text-shadow: 0 0 10px  rgb(50, 50, 50);
 }
 
-#select, #name {
+#select, #name, #crustsel, #phone, #quant{
     color: aliceblue;
     border: none;
     box-shadow: 0 0 10px rgba(14, 14, 14, 0.8);
     background-color: rgb(76, 76, 76);
     border: 2px solid #6e6e6e;
     border-radius: 5px;
-    padding: 10px;
-    text-shadow: 0 0 2px black;
+    padding: 20px;
+
+    width: 100%;
 
     font-size: large;
     transition: border-color 0.3s;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#select:focus, #name:focus {
+#select:focus, #name:focus, #txtarea:focus, #crustsel:focus, #phone:focus, #quant:focus {
     outline: none;
     border-color: rgb(232, 143, 0);
+}
+
+#txtarea {
+    text-align:start;
+    width: 100%;
+    height: 10vmin;
+
+    color: aliceblue;
+    border: none;
+    box-shadow: 0 0 10px rgba(14, 14, 14, 0.8);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(76, 76, 76);
+    border: 2px solid #6e6e6e;
+    border-radius: 5px;
+    padding: 20px;
+
+    font-size: large;
+    transition: border-color 0.3s;
+
+    min-height: 10vmin;
+    max-height: 30vmin;
+
+    resize: vertical;
 }
 
 .ordform {
@@ -246,11 +271,19 @@ body {
     position: sticky;
     bottom: 0px;
 
+    width: 100%;
     box-shadow:
     0px 0px 20px rgba(255, 197, 71, 0.5),
     0px 5px 5px -1px rgba(233, 172, 58, 0.25),
     inset 4px 4px 8px rgba(255, 234, 175, 0.5),
     inset -4px -4px 8px rgba(216, 147, 19, 0.35);
+}
+
+.centerized-int {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: left;
 }
 
 .ordform p {
@@ -270,6 +303,33 @@ body {
 
 .ordform button:hover {
     transform: scale(.95);
+}
+
+#reset-form {
+    position: inherit;
+
+    top: 100px;
+    right: 20px;  
+}
+
+#reset-form img {
+    background-color: rgb(232, 143, 0);
+    box-shadow: 0px 0px 90px rgba(0, 0, 0, 0.452);
+    padding: 1.5vmin;
+    margin: 1.5vmin;
+    border-radius: 50%;
+
+    aspect-ratio: 1 / 1;
+
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    width: 5vmin;
+    height: 5vmin;
+}
+
+#reset-form img:hover {
+    transform: rotate(-90deg);
+    scale: 0.8;
 }
 
 .track-main {
@@ -347,7 +407,6 @@ body {
 
 #loc-div {
     height: 100%;
-    width: 100%;    
 }
 
 .loc-rel {
@@ -452,6 +511,28 @@ body {
     flex-wrap: wrap;
 }
 
+.all-container {
+    position: relative;
+
+    width: 100vmin;
+    margin: auto;
+    padding-top: 10px;
+
+    background-image: radial-gradient(rgba(255, 163, 57, 0.2) 2px, transparent 1px);
+    background-position: 50% 50%;
+    background-size: 1.1rem 1.1rem;
+
+    box-shadow: 0px 0px 100vmin #000000 inset, 0px 0px 100vmin #000000;
+}
+
+#formcontainer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
 @media (max-width: 768px) {
     .formsel {
         border-radius: 0px;
@@ -537,6 +618,7 @@ body {
 
     .header {
         height: 12vmin;
+        box-shadow: 0px 0px 200px rgb(0, 0, 0);
     }
 
     .header > a {
@@ -546,11 +628,19 @@ body {
     .header > div {
         display: none;
     }
-}
 
-@media (max-width: 768px) {
     .newrel {
         width: 100%;
+    }
+
+    #reset-form {
+        top: 17vmin;
+        right: 20px;
+    }
+
+    #reset-form img {
+        width: 10vmin;
+        height: 10vmin;
     }
 }
 

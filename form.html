@@ -16,66 +16,87 @@
 <body>
     <div class="header">
         <a href="index.html">Pizza <span class="hub"> Hub</span></a>
-        
+       
+        <a href="form.html" id="reset-form"><img src="images/assets/Restart.png" draggable="false"></a>
+
+
         <div class="link-div">
             <a href="https://github.com/NooBTvv2"><img src="images/assets/github.png"></a>
             <a href="https://www.facebook.com/LinkedRBXLDevelopment/"><img src="images/assets/facebook.png"></a>
             <a href="https://www.tiktok.com/@its_radishes"><img src="images/assets/tiktok.png"></a>
         </div>
     </div>
-
-    <div style="margin-top: 15vmin;"></div>
-
-    <div class="track-main">
-
-         <!-- Pizza Image Track Container -->
-        <div id="img-track-root" class="moving-track"></div>
-    </div>
-
-    <h1 class="hd-standalone">Order <span class="hub">Form</span></h1>
-
-    <form id="formcontainer">
-
-        <div style="display: grid;" class="formsel">
-            <label>Customer Name</label>
-            <input type="text" id="name" required>
-
-            <br>
-
-            <label>Pizza Size</label>
-
-             <!-- Pizza Size Selection -->
-            <select id="select"></select>
-        </div>
-
-        <div class="formsel">
-            <h1>Select Pizza</h1>
-
-            <!-- Pizza Types Container -->
-            <div id="piz-type"></div>
-
-        </div>
-
-        <br>
-
-        <div class="formsel">
-            <label class="tp-title" style="font-weight: bolder;">Toppings</label>
-
-            <hr>
-
-            <!-- Toppings Container -->
-            <div id="top-container"></div>
     
+    <main id="to-rem" class="all-container">
+        <div style="margin-top: 10vmin;"></div>
+    
+        <div class="track-main">
+    
+            <!-- Pizza Image Track Container -->
+            <div id="img-track-root" class="moving-track"></div>
         </div>
+    
+        <form id="formcontainer">
+            <h1 class="hd-standalone">Order <span class="hub">Form</span></h1>
 
-        <div class="result"></div>
+            <div class="formsel centerized-int">
+                <label class="tp-title">Customer Name</label>
+                <input name="name" type="text" id="name" placeholder="Name?" >
 
-        <div class="ordform">
-            <button class="btn">Submit <span class="hub">Order</span></button>
-            <p style="display: flex;">© 2025 Pizza Hub. All rights reserved. <span style="margin-left: auto;">Made by Calipusan</span></p>
-        </div>
-    </form>
+                <label class="tp-title">Phone Number</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Phone #" >
+                <small>Format: 123-456-7890</small><br>
+            </div>
 
+            <div class="formsel centerized-int">
+                <label class="tp-title">Pizza Size</label>
+    
+                <!-- Pizza Size Selection -->
+                <select name="size" id="select"></select>
+
+                <label class="tp-title">Crust Type</label>
+    
+                <!-- Pizza Crust Selection -->
+                <select name="crust" id="crustsel"></select>
+            </div>
+    
+            <div class="formsel centerized-int">
+                <label class="tp-title">Select Pizza Type</label>
+    
+                <!-- Pizza Types Container -->
+                <div id="piz-type"></div>
+    
+            </div>
+    
+            <div class="formsel centerized-int">
+                <label class="tp-title">Additional Toppings</label>
+
+                <!-- Toppings Container -->
+                <div id="top-container"></div>
+    
+            </div>
+
+            <div class="formsel centerized-int">
+                <label class="tp-title">Delivery Instructions</label>
+                <textarea name="instructions" id="txtarea" placeholder="Specific Delivery Instructions?"></textarea>
+
+            </div>
+
+            <div class="formsel centerized-int">
+                <label class="tp-title">Quantity</label>
+                <input name="quantity" type="number" id="quant" placeholder="1, 2, 3" min="1" max="5">
+            </div>
+
+            <div class="ordform">
+                <button id="submit-order-button" class="btn">Submit <span class="hub">Order</span></button>
+            
+                <p style="display: flex;">© 2025 Pizza Hub. All rights reserved. <span style="margin-left: auto;">Made by
+                        Calipusan</span></p>
+            </div>
+        </form>
+    </main>
+   
+    
 </body>
 
 </html>
