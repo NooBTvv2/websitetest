@@ -280,7 +280,15 @@ getForm.addEventListener('submit', function(event) {
                     `+toppingNode+`
                 </div>
             </div>
+        </div>
 
+        <div class="MobileView">
+            <p>Name: `+ cs_name +`</p>
+            <p>Phone#: `+ cs_phone +`</p>
+            <p>Pizza Type: `+ cs_pzType +` / Size: `+ cs_size +` / Quantity: `+ cs_quantity +`</p>
+
+            <p>Additional toppings:</p>
+            <div id="restpCont">`+toppingNode+`</div>
         </div>
     </div>
     `
