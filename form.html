@@ -14,41 +14,39 @@
 </head>
 
 <body>
-    <div class="header">
+    <header class="header">
         <a href="index.html">Pizza <span class="hub"> Hub</span></a>
-       
         <a href="form.html" id="reset-form"><img src="images/assets/Restart.png" draggable="false"></a>
 
-
-        <div class="link-div">
+        <nav class="link-div">
             <a href="https://github.com/NooBTvv2"><img src="images/assets/github.png"></a>
             <a href="https://www.facebook.com/LinkedRBXLDevelopment/"><img src="images/assets/facebook.png"></a>
             <a href="https://www.tiktok.com/@its_radishes"><img src="images/assets/tiktok.png"></a>
-        </div>
-    </div>
+        </nav>
+    </header>
     
     <main id="to-rem" class="all-container">
         <div style="margin-top: 10vmin;"></div>
     
-        <div class="track-main">
+        <aside class="track-main">
     
             <!-- Pizza Image Track Container -->
             <div id="img-track-root" class="moving-track"></div>
-        </div>
+        </aside>
     
         <form id="formcontainer">
             <h1 class="hd-standalone">Order <span class="hub">Form</span></h1>
 
-            <div class="formsel centerized-int">
+            <section class="formsel centerized-int">
                 <label class="tp-title">Customer Name</label>
                 <input name="name" type="text" id="name" placeholder="Name?" required>
 
                 <label class="tp-title">Phone Number</label>
                 <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Phone #" required>
                 <small>Format: 123-456-7890</small><br>
-            </div>
+            </section>
 
-            <div class="formsel centerized-int">
+            <section class="formsel centerized-int">
                 <label class="tp-title">Pizza Size</label>
     
                 <!-- Pizza Size Selection -->
@@ -58,45 +56,44 @@
     
                 <!-- Pizza Crust Selection -->
                 <select name="crust" id="crustsel"></select>
-            </div>
-    
-            <div class="formsel centerized-int">
+            </section>
+
+            <section class="formsel centerized-int">
                 <label class="tp-title">Select Pizza Type</label>
     
                 <!-- Pizza Types Container -->
                 <div id="piz-type"></div>
     
-            </div>
-    
-            <div class="formsel centerized-int">
+            </section>
+
+            <section class="formsel centerized-int">
                 <label class="tp-title">Additional Toppings</label>
 
                 <!-- Toppings Container -->
                 <div id="top-container"></div>
     
-            </div>
+            </section>
 
-            <div class="formsel centerized-int">
+            <section class="formsel centerized-int">
                 <label class="tp-title">Delivery Instructions</label>
                 <textarea name="instructions" id="txtarea" placeholder="Specific Delivery Instructions?"></textarea>
 
-            </div>
+            </section>
 
-            <div class="formsel centerized-int">
+            <section class="formsel centerized-int">
                 <label class="tp-title">Quantity</label>
                 <input name="quantity" type="number" id="quant" placeholder="1, 2, 3" min="1" max="5">
-            </div>
+            </section>
 
-            <div class="ordform" style="width: 100%;">
+            <footer class="ordform" style="width: 100%;">
                 <button id="submit-order-button" class="btn">Submit <span class="hub">Order</span></button>
             
                 <p style="display: flex;">© 2025 Pizza Hub. All rights reserved. <span style="margin-left: auto;">Made by
                         Calipusan</span></p>
-            </div>
+            </footer>
         </form>
     </main>
    
-    
 </body>
 
 </html>
